@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Roguelike</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Daniel Bastos">
+        <meta name="keywords" content="roguelike, javascript">
+        <meta name="description" content="Roguelike in pure javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <section id="overlayinventory">
+            <ul id="innerInventory"></ul>
+        </section>
+        <section id="startScreen">
+            <img id="logo" src="./img/tile-P.png"></img>
+            <p>ROGUELIKE GAME</p>
+            <p id="btnStartScreen">Start game</p>
+        </section>
+        <aside id="mobileUi">
+            <div>
+                <button id="btnUp" class="button--action">^</button>
+                <button id="btnLeft" class="button--action">&lt;</button>
+                <button id="btnDown" class="button--action">v</button>
+                <button id="btnRight" class="button--action">&gt;</button>
+            </div>
+        </aside>
+        <aside class="mobileMsg">
+        </aside>
+        <aside class="msg">
+            <h2>Player:</h2>
+            <p>Health: <span id="healthHtml">100</span></p>
+            <p>Level: <span id="lvlHtml">1</span></p>
+            <p>High Score: <span id="highScoreHtml"></span></p>
+            <p>Equiped: <span id="equipedHtml"></span></p>
+        </aside>
+        <div id="txtOut"></div>
+        <div id="gameWindow">
+        </div>
+        <script type="text/javascript" src="js/game.js"></script>
+    </body>
+</html>
