@@ -77,37 +77,6 @@ class Sword {
     }
 }
 
-
-let printInventory = function () {
-    clearInventory();
-    for (let x = 0; x < playerData.inventory.length; x++) {
-        let drawItem = document.createElement('li');
-        drawItem.setAttribute('class', 'inventoryItem');
-
-        if (!playerData.inventory[x].equiped) {
-            drawItem.innerHTML = "<p>  <span class='itemSelect' id=" + x + ">" + playerData.inventory[x].name + " X </span></p>";
-        } else {
-            drawItem.innerHTML = "<p>  <span class='itemSelect' id=" + x + "> " + playerData.inventory[x].name + "  # </span></p>";
-
-        }
-        if (playerData.inventory.length == 0 ) {
-            drawItem.innerHTML = "<p>Empty</p>";
-        }
-        document.querySelector('#innerInventory').appendChild(drawItem);
-    }
-}
-
-
-let clearInventory = function () {
-    let elemInnerInventory = document.querySelector('#innerInventory');
-    elemInnerInventory.parentNode.removeChild(elemInnerInventory);
-
-    let elemNewWindow = document.createElement('ul');
-    elemNewWindow.setAttribute('id', 'innerInventory');
-    document.querySelector('#overlayinventory').appendChild(elemNewWindow);
-}
-
-
 let isDead = 0;
 
 class enemyData {
@@ -1503,8 +1472,6 @@ playerData.equiped = {
     type: "empty"
 };
 
-printInventory();
-
 
 //handel user input via keyboard
 document.addEventListener("keydown", function onPress(event) {
@@ -1515,8 +1482,6 @@ let btnStartScreen = document.querySelector("#btnStartScreen");
 
 let elemOverlayStartScreen = document.querySelector("#startScreen");
 let elemOverlay = document.querySelector("#overlay");
-let elemOverlayInventory = document.querySelector("#overlayinventory");
-let checkboxSound = document.querySelector("#checkboxSound");
 
 //start screen
 btnStartScreen.addEventListener('click', function () {
